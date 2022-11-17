@@ -5,11 +5,11 @@
 
 int pubKeyTest (EVP_PKEY *key)
 {
-	FILE *fp;
+    FILE *fp;
     char file[128];
-	EVP_PKEY *readKey = EVP_PKEY_new();
+    EVP_PKEY *readKey = EVP_PKEY_new();
 
-	memset (file, 0, sizeof(file)); // clear
+    memset (file, 0, sizeof(file)); // clear
     sprintf (file, "pub%d", getpid());
 
     assert ((fp = fopen(file, "w")) != 0);
@@ -30,9 +30,9 @@ int pubKeyTest (EVP_PKEY *key)
 
 int privKeyTest (EVP_PKEY *key)
 {
-	FILE *fp;
+    FILE *fp;
     char file[128];
-	EVP_PKEY *readKey = EVP_PKEY_new();
+    EVP_PKEY *readKey = EVP_PKEY_new();
 
     memset (file, 0, sizeof(file)); // clear
     sprintf (file, "priv%d", getpid());
