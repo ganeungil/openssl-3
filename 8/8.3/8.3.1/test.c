@@ -21,9 +21,9 @@ int pubKeyTest (EVP_PKEY *key)
     fclose (fp);
 
     if (EVP_PKEY_eq (key, readKey) == 1)
-        printf ("public key test success\n");
+        printf ("public key test success.\n");
     else
-        printf ("public key test failed.\n");
+        printf ("public key test fail.\n");
 
     unlink (file);
 }
@@ -46,9 +46,9 @@ int privKeyTest (EVP_PKEY *key)
     fclose (fp);
 
     if (EVP_PKEY_eq (key, readKey) == 1)
-        printf ("private key test success\n");
+        printf ("private key test success.\n");
     else
-        printf ("private key test failed.\n");
+        printf ("private key test fail.\n");
 
     unlink (file);
 }
