@@ -15,7 +15,6 @@
 void print_errors(void);
 void printKeys (EVP_PKEY *pkey);
 
-int genPkey(EVP_PKEY **ppkey);
 int getCharKeys (EVP_PKEY *pkey, unsigned char **pubkey, int *publen, unsigned char **privkey, int *privlen);
 int setCharKeys (EVP_PKEY **pkey, unsigned char *pubkey, int publen, unsigned char *privkey, int privlen);
 
