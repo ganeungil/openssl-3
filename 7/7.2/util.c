@@ -11,6 +11,7 @@ EVP_PKEY *getPubKey(EVP_PKEY * pkey)
 
 	assert(i2d_PUBKEY_bio(bp, pkey));
 	assert(d2i_PUBKEY_bio(bp, &pubkey));
+
 	BIO_free(bp);
 	return (pubkey);
 }
