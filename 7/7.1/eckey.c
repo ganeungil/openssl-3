@@ -19,5 +19,6 @@ int genKey(EVP_PKEY ** pkey)
 
 	// generate key pair
 	assert(EVP_PKEY_keygen(ctx, pkey));
+
 	EVP_PKEY_CTX_free(ctx);
 }
