@@ -106,19 +106,6 @@ void x963kdf (uchar *s, short sLen, uchar *s1, short s1Len, uchar *derivedKey, i
 }
 
 
-/* EC_POINT_mul(group, P, n, Q, m, ctx) calculates
- *	P = n * G + m *Q, where G is the generator of the group
- *
- *	If you want to multiply the  generator with n and store
- *		the result in P then you must call: (P = n*G)
- *			EC_POINT_mul(group, P, n, NULL, NULL, ctx)
- *
- *	If you want to multiply an arbitrary point Q (i.e. not
- *		the generator) with a integer n call: (P = n*Q)
- *			EC_POINT_mul(group, P, NULL, Q, n, ctx)
- */
-
-
 EVP_PKEY * readPrivKey (char *filename, EVP_PKEY **privKey)
 {
 	FILE *fp;
