@@ -102,16 +102,19 @@ int main()
 	len = gcm_decrypt(ciphertext, len, AAD, strlen(AAD), tag, KEY, IV, strlen(IV), plaintext);
 
 	if (len < 0) {
-		printf("verification fail.\n");
-		exit(-1);
+        	printf("verification fail.\n");
+        	exit(-1);
+	} else {
+		plaintext[len] = 0;
+		printf("[%s]\n", plaintext);
+		printf ("verification success.\n");
 	}
-	plaintext[len] = 0;
-	printf("[%s]\n", plaintext);
-	
-	*ciphertext = 'A';	// modify intentionally
+
+	//modify intentionally
+	*ciphertext = 'A';
 	len = gcm_decrypt(ciphertext, len, AAD, strlen(AAD), tag, KEY, IV, strlen(IV), plaintext);
 	if (len < 0) {
 		printf("verification fail.\n");
-		exit(-1);
+        	exit(-1);
 	}
 }
